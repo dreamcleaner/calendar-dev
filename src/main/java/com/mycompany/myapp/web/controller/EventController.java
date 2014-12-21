@@ -152,22 +152,5 @@ public class EventController {
         
         return "allEvent";
 	}
-	/*@RequestMapping(value = "/form", method = RequestMethod.POST)
-    public String processCreate(@ModelAttribute("eventForm") Event event,@RequestParam(value = "when") String when, Model model) {
-		Calendar calendar = Calendar.getInstance();
-		StringTokenizer tokens = new StringTokenizer(when);
-		int month = Integer.parseInt(tokens.nextToken("\\/")), date = Integer.parseInt(tokens.nextToken("\\/")), year = Integer.parseInt(tokens.nextToken(" ")),hourOfDay = Integer.parseInt(tokens.nextToken("\\:")), minute = Integer.parseInt(tokens.nextToken(" "));
-		System.out.println(" " + month + date + year + hourOfDay + minute);
-		calendar.set(year, month, date, hourOfDay, minute);
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		if(!(auth instanceof AnonymousAuthenticationToken)) {
-	         UserDetails userDetail = (UserDetails) auth.getPrincipal();
-	         event.setOwner(calendarService.getUserByEmail(userDetail.getUsername()));
-		}
-		event.setWhen(calendar);
-		event.setNumLikes(0);
-        this.calendarService.createEvent(event);
-        
-        return "eventcreatesuccess";
-    }*/
+
 }
