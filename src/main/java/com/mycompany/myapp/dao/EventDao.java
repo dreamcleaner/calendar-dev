@@ -19,5 +19,7 @@ public interface EventDao {
     
     public List<Event> findEventsByLevel(EventLevel eventLevel);
     
+    public void deleteEvent(int id);
+    
     public void deleteAll();
 }

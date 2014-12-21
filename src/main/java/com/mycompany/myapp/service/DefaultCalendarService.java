@@ -88,6 +88,9 @@ public class DefaultCalendarService implements CalendarService {
 
 		return eventDao.createEvent(event);
 	}
+	public void deleteEvent(int id){
+		eventDao.deleteEvent(id);
+	}
 
 	@Override
 	public void deleteAllEvents() {
@@ -96,8 +99,13 @@ public class DefaultCalendarService implements CalendarService {
 
 	/* EventAttendee */
 	@Override
+	public EventAttendee getEventAttendeeByEventIdAttendeeId(int eventId, int attendeeId){
+		return eventAttendeeDao.findEvetAttendeeByEventIdAttendeeId(eventId, attendeeId);
+	}
+	
+	@Override
 	public List<EventAttendee> getEventAttendeeByEventId(int eventId) {
-		return null;
+		return eventAttendeeDao.findEventAttendeeByEventId(eventId);
 	}
 
 	@Override

@@ -1,3 +1,42 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+body {
+	font-family: "Nanum Gothic", sans-serif;
+	background-color: #E6E6E6;
+}
 .header {
-  padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+  padding-top: 5px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+#bs-example-navbar-collapse-1 li{
+	font-size: 16px;
+}
+
+#allevent-all{
+	width: 100%;
+	display: table; 
+	padding: 20px;
+	margin-left: auto; 
+	margin-right: auto;
+	margin-bottom: 25px;
+	background-color: #F8F8F8;
+}
+
+#foot-bar{
+	padding: 2px;
+	background-color: #F8F8F8;
+	text-align: center;
+}
+
+#small-title{
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+#login-box{
+	width: 300px;
+	display: table; 
+	margin-left: auto; 
+	margin-right: auto;
+	text-align: center;
+}
+#login-box tr{
+	height: 40px;
 }

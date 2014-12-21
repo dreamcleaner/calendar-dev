@@ -5,6 +5,8 @@ import java.util.List;
 import com.mycompany.myapp.domain.EventAttendee;
 
 public interface EventAttendeeDao {
+	public EventAttendee findEvetAttendeeByEventIdAttendeeId(int eventId, int attendeeId);
+	
     public List<EventAttendee> findEventAttendeeByEventId(int eventId);
     
     public List<EventAttendee> findEventAttendeeByAttendeeId(int attendeeId);

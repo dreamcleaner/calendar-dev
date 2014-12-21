@@ -14,12 +14,23 @@
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 </head>
+
 <body class="header">
 <div class="container">
 <jsp:include page="./includes/header.jsp"/>
     <c:if test="${message != null}">
         <div class="alert alert-danger" id="message"><c:out value="${message}"/></div>
     </c:if>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>MY SCHEDULE</h1>
+    <p>mySchedule 서비스에 오신 것을 환영합니다.</p>
+    <c:url var="eventsUrl" value="/events/" />
+    <p><a href="${eventsUrl}" class="btn btn-primary btn-lg">모든이벤트 살펴보기</a></p>
+  </div>
+</div>
+		<div id="allevent-all">
 	<ul>
 	    <li><a id="eventsLink" href="events/">모든 이벤트 보기</a> - 모든 유저들이 등록한 이벤트를 볼 수 있습니다.
 	    	<ul>
@@ -37,7 +48,9 @@
 	    <li><a id="signupLink" href="users/signup">회원 가입</a> - 회원 가입을 합니다.</li>
 	    <li><a id="signinLink" href="users/signin">로그인</a> - 로그인을 합니다.</li>
 	</ul>
+	</div>
 <jsp:include page="./includes/footer.jsp"/>
+
 </div>
 </body>
 </html>

@@ -84,6 +84,9 @@ public class JdbcCalendarUserDao implements CalendarUserDao {
 				return ps;
 			}
 		}, keyHolder);
+
+		this.jdbcTemplate.update("insert into user_roles (email,role) values('" + userToAdd.getEmail() + "','ROLE_USER')");
+		
 		return keyHolder.getKey().intValue();
 	}
 	

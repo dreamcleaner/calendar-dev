@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>  
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <c:set var="pageTitle" value="Welcome to myCalendar!" scope="request"/>
@@ -21,27 +22,42 @@
     <c:if test="${message != null}">
         <div class="alert alert-success" id="message"><c:out value="${message}"/></div>
     </c:if>
-    <div class="container row">
-    <div class="alert alert-success col-md-6" id="message">도움말: <a href="https://github.com/Eonasdan/bootstrap-datetimepicker/wiki/Installation" target="_blank">https://github.com/Eonasdan/bootstrap-datetimepicker/wiki/Installation</a></div>
-    <div class="alert alert-success col-md-6" id="message">예제: <a href="http://eonasdan.github.io/bootstrap-datetimepicker/" target="_blank">http://eonasdan.github.io/bootstrap-datetimepicker/</a></div>
+   
+	<div id="allevent-all">
+		<div id="small-title">
+			<img src="${resourceUrl}/images/createevent.png"/>
+		</div>
+		<form:form action="createevent" method="post" commandName="eventForm" role="form">
+			<div class="form-group">
+				<label for="exampleInputEmail1">summary</label> 
+				<form:input path="summary" class="form-control" id="exampleInputEmail1" placeholder="summary" />
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">description</label> 
+				<form:input path="description" class="form-control" id="exampleInputEmail1" placeholder="description" />
+			</div>
+			<div class="form-group">
+					<label for="exampleInputPassword1">When</label> 
+					<div class="row">
+						<div class='col-md-6'>
+							<div class="form-group">
+								<div class='input-group date' id='datetimepicker1'>
+									<input type="text" name="value" class="form-control" /> <span
+										class="input-group-addon"> <span
+										class="glyphicon glyphicon-calendar"></span>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<button type="submit" class="btn btn-default">Submit</button>
+		</form:form>
 	</div>
-	
-	<div class="container">
+
+
 		
-	    <div class="row">
-	        <div class='col-md-6'>
-	            <div class="form-group">
-	                <div class='input-group date' id='datetimepicker1'>
-	                    <input type='text' class="form-control" />
-	                    <span class="input-group-addon">
-	                    	<span class="glyphicon glyphicon-calendar"></span>
-	                    </span>
-	                </div>
-	            </div>
-	        </div>
-	    </div>
-	</div>
-<jsp:include page="./includes/footer.jsp"/>
+		<jsp:include page="./includes/footer.jsp"/>
 </div>
 <script type="text/javascript" src="${resourceUrl}/javascript/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="${resourceUrl}/bootstrap-3.3.1/js/bootstrap.min.js"></script>

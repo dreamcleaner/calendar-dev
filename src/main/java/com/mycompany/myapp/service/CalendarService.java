@@ -29,9 +29,13 @@ public interface CalendarService {
 
     public int createEvent(Event event);
     
+    public void deleteEvent(int id);
+    
     public void deleteAllEvents();
     
     /* EventAttendee */
+    public EventAttendee getEventAttendeeByEventIdAttendeeId(int eventId, int attendeeId);
+    
     public List<EventAttendee> getEventAttendeeByEventId(int eventId);
     
     public List<EventAttendee> getEventAttendeeByAttendeeId(int attendeeId);

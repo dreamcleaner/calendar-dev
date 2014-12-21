@@ -9,8 +9,8 @@
     <!-- enable use-expressions -->
  
 	<http auto-config="true" use-expressions="true">
- 		<intercept-url pattern="/events/my" access="hasRole('ROLE_USER')" />
- 		<intercept-url pattern="/events/form" access="hasRole('ROLE_USER')" />
+ 		<intercept-url pattern="/events/my" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" />
+ 		<intercept-url pattern="/events/createevent" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')" />
  		<!-- access denied page -->
 		<access-denied-handler error-page="/403" />
  

@@ -97,6 +97,12 @@ public class JdbcEventDao implements EventDao {
 	}
 
 	@Override
+	public void deleteEvent(int id){
+		String sql_query = "delete from events where id = ?";
+		this.jdbcTemplate.update(sql_query, new Object[] {id});
+	}
+
+	@Override
 	public void deleteAll() {
 		String sql = "delete from events";
 		this.jdbcTemplate.update(sql);

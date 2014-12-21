@@ -1,6 +1,7 @@
 package com.mycompany.myapp.domain;
 
 import java.util.Calendar;
+import java.util.Date;
 
 public class Event {
     private Integer id;

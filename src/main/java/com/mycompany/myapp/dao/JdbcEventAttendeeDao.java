@@ -51,6 +51,12 @@ public class JdbcEventAttendeeDao implements EventAttendeeDao {
 	public void setDataSource(DataSource dataSource){
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
+	
+	@Override
+	public EventAttendee findEvetAttendeeByEventIdAttendeeId(int eventId, int attendeeId){
+		String sql_query = "select * from events_attendees where event_id = ? and attendee = ?";
+		return this.jdbcTemplate.queryForObject(sql_query, new Object[] {eventId, attendeeId}, rowMapper);
+	}
 
 	@Override
 	public List<EventAttendee> findEventAttendeeByEventId(int eventId) {
